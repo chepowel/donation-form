@@ -4,7 +4,7 @@ module.exports = {
 	mode: 'development',
 	entry: path.join(__dirname, './index.js'),
 	output: {
-		path: __dirname,
+		path: __dirname + '/build/',
 		filename: 'main.js',
 	},
 	module: {
