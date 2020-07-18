@@ -8,7 +8,7 @@ import Input from '../../components/Input/Input';
 const App = () => {
 
 	const [state, setState] = useState({
-		togo: state.goal - state.currentDonations,
+		togo: 1500, //state.goal - state.currentDonations,
 		progress: 0,
 		daysLeft: 4,
 		donorCount: 2,
