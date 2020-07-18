@@ -1,11 +1,11 @@
 # Donation Form
 Donation Form in React
 
-##Installation
+## Installation
 
 ### `npm install`
 
-##Bundle the JS
+## Bundle the JS
 
 ### `npx webpack`
 
