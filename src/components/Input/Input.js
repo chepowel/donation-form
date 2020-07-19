@@ -1,12 +1,12 @@
-import React, { useState } from 'react';
-import ReactDOM from 'react-dom';
+import React from 'react';
 
 const Input = (props) => {
 
 	return (
-		<div>
-			<input type="text" /><input type="submit" />
-		</div>
+		<form onSubmit={props.handleSubmit}>
+			<input type="text" name="donation" />
+			<button type="submit">Give Now</button>
+		</form>
 	)
 };
 
