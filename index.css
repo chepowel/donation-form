@@ -11,15 +11,6 @@ h1 {
     font-weight: bold;
 }
 
-.progress-bar-border {
-    border: 1px solid #ccc;
-}
-
-.progress-bar {
-    color: #000!important;
-    background-color: #9e9e9e;
-}
-
 input[type="text"] {
     width: 200px;
     height: 20px;
@@ -34,4 +25,21 @@ input[type="submit"] {
     color: white;
     border: 0;
     -webkit-appearance: none;
+}
+
+.progress-bar-border {
+    border: 1px solid #ccc;
+}
+
+.progress-bar {
+    color: #000;
+    background-color: #9e9e9e;
+}
+
+.success {
+    color: green;
+}
+
+.error {
+    color: red;
 }
