@@ -46,7 +46,7 @@ const App = () => {
 	};
 
 	return (
-		<div>
+		<main>
 			<ToGoBanner togo={state.togo} />
 			<ProgressBar progress={state.progress} />
 			<Content daysLeft={state.daysLeft} donorCount={state.donorCount} />
@@ -60,7 +60,7 @@ const App = () => {
 						 value={state.currentInput}
 						 handleSubmit={handleSubmit}
 			/>
-		</div>
+		</main>
 	)
 };
 
