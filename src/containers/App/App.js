@@ -46,20 +46,24 @@ const App = () => {
 	};
 
 	return (
-		<main>
+		<main className="container">
 			<ToGoBanner togo={state.togo} />
-			<ProgressBar progress={state.progress} />
-			<Content daysLeft={state.daysLeft} donorCount={state.donorCount} />
-			{state.success &&
-				<p className="success">Goal Met!</p>
-			}
-			{state.error &&
-				<p className="error">Input Error</p>
-			}
-			<Input name='currentDonation'
-						 value={state.currentInput}
-						 handleSubmit={handleSubmit}
-			/>
+			<div className="container-inner">
+				<ProgressBar progress={state.progress} />
+					<div className="content">
+					<Content daysLeft={state.daysLeft} donorCount={state.donorCount} />
+					{state.success &&
+						<p className="success">Goal Met!</p>
+					}
+					{state.error &&
+						<p className="error">Input Error</p>
+					}
+					<Input name='currentDonation'
+								 value={state.currentInput}
+								 handleSubmit={handleSubmit}
+					/>
+				</div>
+			</div>
 		</main>
 	)
 };

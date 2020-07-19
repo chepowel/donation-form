@@ -3,9 +3,9 @@ import React from 'react';
 const ProgressBar = (props) => {
 
 	return (
-		<div>
-			<p>${props.togo} still needed to fund this project</p>
-		</div>
+		<blockquote className="speech-bubble">
+			<p><strong>${props.togo}</strong> still needed to fund this project</p>
+		</blockquote>
 	)
 };
 

@@ -9,6 +9,7 @@ body {
 h1 {
     font-family: 'Poppins', sans-serif;
     font-weight: bold;
+    font-size: x-large;
 }
 
 input[type="text"] {
@@ -27,6 +28,21 @@ input[type="submit"] {
     -webkit-appearance: none;
 }
 
+.container {
+    width: 400px;
+    margin: auto;
+}
+
+.container-inner {
+    background-color: white;
+    border-radius: 0 0 5px 5px;
+    box-shadow: 0 3px 3px 0px lightgrey;
+}
+
+.content {
+    margin: 20px;
+}
+
 .progress-bar-border {
     border: 1px solid #ccc;
 }
@@ -42,4 +58,29 @@ input[type="submit"] {
 
 .error {
     color: red;
+}
+
+.speech-bubble {
+  margin: 0;
+  margin-bottom: 30px;
+  padding: 1px 18px;
+  position: relative;
+  background: #e3ebfc;
+  color: #5884ea;
+  border-radius: 5px;
+}
+.speech-bubble::before {
+  border: 12.5px solid transparent;
+  border-top: 12.5px solid #e3ebfc;
+  border-bottom: 0;
+  height: 0;
+  width: 0;
+  border-top-width: 18px;
+  content: '';
+  display: block;
+  position: absolute;
+  left: 20rem;
+  bottom: -18px;
+  -webkit-transform-origin: center;
+          transform-origin: center;
 }
