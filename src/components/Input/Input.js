@@ -4,8 +4,8 @@ const Input = (props) => {
 
 	return (
 		<form onSubmit={props.handleSubmit}>
-			<label className="visuallyhidden">Donation: </label>
-			<input type="number" min="5" name="donation" title="Donation" />
+			<label for="donation" className="visuallyhidden">Donation: </label>
+			<input id="donation" type="number" min="5" name="donation" title="Donation" />
 			<input type="submit" value="Give Now" />
 		</form>
 	)
