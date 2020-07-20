@@ -17,7 +17,8 @@ const App = () => {
 		goal: 5000,
 		currentDonations: 0,
 		success: false,
-		error: false
+		error: false,
+		over: 0
 	});
 
 	const handleSubmit = (event) => {
@@ -33,6 +34,7 @@ const App = () => {
 		}
 		let updatedCurrentDonations = state.currentDonations + currentInput;
 		let updatedTogo = state.goal - updatedCurrentDonations;
+		let updatedOver = numberWithCommas(updatedTogo* -1);
 		let updatedProgress = ((state.goal - updatedTogo)/state.goal)*100;
 		updatedProgress = updatedProgress >= 100 ? 100 : updatedProgress;
 		updatedTogo = updatedTogo <= 0 ? 0 : numberWithCommas(updatedTogo);
@@ -46,13 +48,14 @@ const App = () => {
 			donorCount: updatedDonorCount,
 			progress: updatedProgress,
 			success: updatedSuccess,
+			over: updatedOver,
 			error: false
     });
 	};
 
 	return (
 		<main className="container">
-			<ToGoBanner success={state.success} togo={state.togo} />
+			<ToGoBanner success={state.success} over={state.over} togo={state.togo} />
 			<div className="container-inner">
 				<ProgressBar progress={state.progress} />
 					<div className="content">

@@ -8,7 +8,7 @@ const ProgressBar = (props) => {
 				<p><strong><sup>$</sup>{props.togo}</strong> still needed to fund this project</p>
 			}
 			{props.success &&
-				<p><strong>Goal Met!</strong></p>
+				<p><strong>Goal Met!</strong> We are <strong><sup>$</sup>{props.over}</strong> our goal.</p>
 			}
 		</blockquote>
 	)
