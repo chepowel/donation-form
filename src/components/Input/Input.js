@@ -4,8 +4,8 @@ const Input = (props) => {
 
 	return (
 		<form onSubmit={props.handleSubmit}>
-			<input type="text" name="donation" title="Donation" />
-			<button type="submit">Give Now</button>
+			<input type="number" min="5" name="donation" title="Donation" />
+			<input type="submit" value="Give Now" />
 		</form>
 	)
 };

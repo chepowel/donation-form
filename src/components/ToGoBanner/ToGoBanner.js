@@ -4,7 +4,12 @@ const ProgressBar = (props) => {
 
 	return (
 		<blockquote className="speech-bubble">
-			<p><strong>${props.togo}</strong> still needed to fund this project</p>
+			{!props.success &&
+				<p><strong><sup>$</sup>{props.togo}</strong> still needed to fund this project</p>
+			}
+			{props.success &&
+				<p><strong>Goal Met!</strong></p>
+			}
 		</blockquote>
 	)
 };
