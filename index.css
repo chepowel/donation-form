@@ -22,9 +22,9 @@ input[type="number"] {
     font-size: large;
     font-weight: bold;
     height: 40px;
-    padding-left: 20px;
+    padding-left: 23px;
     padding-right: 40px;
-    width: 78%;
+    width: 75%;
 }
 
 input[type="submit"] {
@@ -54,6 +54,25 @@ input[type="submit"] {
     margin: 30px;
 }
 
+.error {
+    color: red;
+    font-weight: bold;
+}
+
+.left-inner-addon {
+    position: relative;
+}
+.left-inner-addon input[type='number'] {
+    padding-left: 30px;
+}
+.left-inner-addon p {
+    color: gray;
+    position: absolute;
+    margin-top: 13px;
+    padding-left: 15px;
+    pointer-events: none;
+}
+
 .progress-bar-bg {
     background-color: #b6f2e4;
     border-radius: 5px 5px 0 0;
@@ -67,10 +86,6 @@ input[type="submit"] {
     height: 15px;
 }
 
-.error {
-    color: red;
-    font-weight: bold;
-}
 
 .speech-bubble {
     background: #e3ebfc;
