@@ -1,13 +1,16 @@
 import React, { useState } from 'react';
+
 import ToGoBanner from '../../components/ToGoBanner/ToGoBanner';
 import ProgressBar from '../../components/ProgressBar/ProgressBar';
 import Content from '../../components/Content/Content';
 import Input from '../../components/Input/Input';
 
+import numberWithCommas from '../../utils/helpers'
+
 const App = () => {
 
 	const [state, setState] = useState({
-		togo: 5000,
+		togo: '5,000',
 		progress: 0,
 		daysLeft: 'four',
 		donorCount: 0,
@@ -20,7 +23,7 @@ const App = () => {
 	const handleSubmit = (event) => {
 		event.preventDefault();
 		let currentInput = Number(event.target.donation.value);
-		let error = isNaN(currentInput);
+		let error = currentInput === 0;
 		if(error){
 			setState({
 				...state,
@@ -30,9 +33,11 @@ const App = () => {
 		}
 		let updatedCurrentDonations = state.currentDonations + currentInput;
 		let updatedTogo = state.goal - updatedCurrentDonations;
-		let updatedDonorCount = state.donorCount + 1;
 		let updatedProgress = ((state.goal - updatedTogo)/state.goal)*100;
-		let updatedSuccess = updatedProgress >= 100;
+		updatedProgress = updatedProgress >= 100 ? 100 : updatedProgress;
+		updatedTogo = updatedTogo <= 0 ? 0 : numberWithCommas(updatedTogo);
+		let updatedDonorCount = state.donorCount + 1;
+		let updatedSuccess = updatedProgress === 100;
 
     setState({
       ...state,
@@ -47,21 +52,15 @@ const App = () => {
 
 	return (
 		<main className="container">
-			<ToGoBanner togo={state.togo} />
+			<ToGoBanner success={state.success} togo={state.togo} />
 			<div className="container-inner">
 				<ProgressBar progress={state.progress} />
 					<div className="content">
 					<Content daysLeft={state.daysLeft} donorCount={state.donorCount} />
-					{state.success &&
-						<p className="success">Goal Met!</p>
-					}
 					{state.error &&
 						<p className="error">Input Error</p>
 					}
-					<Input name='currentDonation'
-								 value={state.currentInput}
-								 handleSubmit={handleSubmit}
-					/>
+					<Input name='currentDonation' handleSubmit={handleSubmit} />
 				</div>
 			</div>
 		</main>
